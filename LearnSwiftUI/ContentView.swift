@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, Dunia!")
-            .padding()
+        HandView()
     }
 }
 
@@ -20,4 +19,18 @@ struct ContentView_Previews: PreviewProvider {
             ContentView()
         }
     }
+}
+
+
+struct HandView : View {
+    var body: some View{
+        Image(systemName: "hand.raised")
+            .resizable()
+            .frame(width: 100, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: .center)
+            .background(Color("blue"))
+            .foregroundColor(Color.white)
+            .padding()
+            .background(Color("blue"))
+            .cornerRadius(20)
+}
 }
