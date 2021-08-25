@@ -22,7 +22,7 @@ struct YoutubeHomeView_Previews: PreviewProvider {
 struct Home : View {
     var body: some View{
         NavigationView{
-            Text("Heloo ini Content")
+            Content()
                 .navigationBarItems(
                     leading:
                         HStack{
@@ -57,7 +57,130 @@ struct Home : View {
                             })
                             
                         }
-                )
+                ).navigationBarTitle("", displayMode: .inline)
+        }.navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+
+struct Content : View {
+    var body: some View{
+        List{
+            
+            //Konten 1
+            VStack{
+                ZStack(alignment: .bottomTrailing){
+                    Image("img_onepiece2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    
+                    Text("10:10")
+                        .padding(.all, 5)
+                        .foregroundColor(.white)
+                        .font(.caption)
+                        .background(Color.black)
+                        .cornerRadius(5)
+                        .padding(.trailing, 5)
+                        .padding(.bottom, 5)
+                }
+                
+                HStack(spacing: 20){
+                    Image("img_rasyid")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .clipShape(Circle())
+                    
+                    VStack(alignment: .leading){
+                        Text("One Piece Eps 200").font(.headline)
+                        
+                        HStack{
+                            Text("Ini Adalah adalah onepiece eps 200 - 5000x ditonton 2jam yang lalu")
+                                .font(.caption)
+                        }
+                    }
+                    
+                    Spacer()
+                    Image(systemName: "list.bullet")
+                }
+            }
+            
+            
+            //Konten 2
+            VStack{
+                ZStack(alignment: .bottomTrailing){
+                    Image("img_onepiece1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    
+                    Text("10:10")
+                        .padding(.all, 5)
+                        .foregroundColor(.white)
+                        .font(.caption)
+                        .background(Color.black)
+                        .cornerRadius(5)
+                        .padding(.trailing, 5)
+                        .padding(.bottom, 5)
+                }
+                
+                HStack(spacing: 20){
+                    Image("img_rasyid")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .clipShape(Circle())
+                    
+                    VStack(alignment: .leading){
+                        Text("One Piece Eps 200").font(.headline)
+                        
+                        HStack{
+                            Text("Ini Adalah adalah onepiece eps 200 - 5000x ditonton 2jam yang lalu")
+                                .font(.caption)
+                        }
+                    }
+                    
+                    Spacer()
+                    Image(systemName: "list.bullet")
+                }
+            }
+            
+            
+            //Konten 3
+            VStack{
+                ZStack(alignment: .bottomTrailing){
+                    Image("img_onepiece1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                    
+                    Text("10:10")
+                        .padding(.all, 5)
+                        .foregroundColor(.white)
+                        .font(.caption)
+                        .background(Color.black)
+                        .cornerRadius(5)
+                        .padding(.trailing, 5)
+                        .padding(.bottom, 5)
+                }
+                
+                HStack(spacing: 20){
+                    Image("img_rasyid")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
+                        .clipShape(Circle())
+                    
+                    VStack(alignment: .leading){
+                        Text("One Piece Eps 200").font(.headline)
+                        
+                        HStack{
+                            Text("Ini Adalah adalah onepiece eps 200 - 5000x ditonton 2jam yang lalu")
+                                .font(.caption)
+                        }
+                    }
+                    
+                    Spacer()
+                    Image(systemName: "list.bullet")
+                }
+            }
+            
         }
     }
+    
 }
