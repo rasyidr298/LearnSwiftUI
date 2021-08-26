@@ -37,12 +37,13 @@ struct BicycleHomeView: View {
         ProductModel(id: 3, namaProduct: "Polygon Hitam", fotoProduct: "img_bicycle", hargaProduct: "300.0000", lokasi: "Jakarta", ratingCount: 5, jumlahRating: 56)
     ]
     
+    @State var chartCount: Int = 0
     var body: some View {
         NavigationView{
             ScrollView{
                 ForEach(data){row in
                     VStack(spacing:10){
-                        Product(data: row)
+                        Product(data: row, chartCountIndex: $chartCount)
                     }
                     .padding()
                 }
@@ -53,9 +54,7 @@ struct BicycleHomeView: View {
                     Button(action: {print("click button ")}, label: {
                         Image(systemName: "person.fill")
                     })
-                    Button(action: {print("click button ")}, label: {
-                        Image(systemName: "cart.fill")
-                    })
+                    ChartView(chartCount: $chartCount)
                 }
             )
         }
@@ -69,10 +68,33 @@ struct BicycleHomeView: View {
         }
     }
     
+    struct ChartView : View {
+        
+        @Binding var chartCount: Int
+        
+        var body: some View{
+            ZStack{
+                Button(action: {print("click button ")}, label: {
+                    Image(systemName: "cart.fill")
+                })
+                
+                Text("\(chartCount)")
+                    .foregroundColor(Color.white)
+                    .frame(width: 10, height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .font(.body)
+                    .padding(5)
+                    .background(Color.red)
+                    .clipShape(Circle())
+                    .offset(x: 10, y: -10)
+                
+            }
+        }
+    }
     
     struct Product : View {
         
         let data: ProductModel
+        @Binding var chartCountIndex: Int
         
         var body: some View{
             VStack(alignment: .leading){
@@ -119,7 +141,7 @@ struct BicycleHomeView: View {
                 }
                 .padding(.leading)
                 
-                Button(action: {print("click button add chart")}, label: {
+                Button(action: {print(self.chartCountIndex += 1)}, label: {
                     Spacer()
                     HStack{
                         Image(systemName: "cart")
