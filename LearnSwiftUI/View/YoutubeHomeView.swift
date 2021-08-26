@@ -11,19 +11,19 @@ struct YoutubeHomeView: View {
     var body: some View {
         ZStack{
             TabView{
-                Beranda()
+                Home()
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("Beranda")
                     }
                 
-                Beranda()
+                Home()
                     .tabItem {
                         Image(systemName: "paperplane.fill")
                         Text("Explore")
                     }
                 
-                Beranda()
+                Home()
                     .tabItem {
                         Image(systemName: "tray.fill")
                         Text("Subscription")
@@ -35,7 +35,7 @@ struct YoutubeHomeView: View {
                         Text("Inbox")
                     }
                 
-                Beranda()
+                Home()
                     .tabItem {
                         Image(systemName: "play.rectangle.fill")
                         Text("Collection")
