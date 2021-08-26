@@ -14,6 +14,8 @@
 		84A6E40526D4E26E00454A05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A6E40426D4E26E00454A05 /* Assets.xcassets */; };
 		84A6E40826D4E26E00454A05 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A6E40726D4E26E00454A05 /* Preview Assets.xcassets */; };
 		84C835CE26D5EA2B005EC16F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C835CD26D5EA2B005EC16F /* SettingView.swift */; };
+		84F6FCC926D731B80074F4C3 /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6FCC826D731B80074F4C3 /* Bicycle.swift */; };
+		84F6FCCC26D732790074F4C3 /* GlobalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6FCCB26D732790074F4C3 /* GlobalObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		84A6E40726D4E26E00454A05 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84A6E40926D4E26E00454A05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84C835CD26D5EA2B005EC16F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		84F6FCC826D731B80074F4C3 /* Bicycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
+		84F6FCCB26D732790074F4C3 /* GlobalObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 		84A6E3FF26D4E26D00454A05 /* LearnSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				84F6FCCD26D7354E0074F4C3 /* Constant */,
+				84F6FCCA26D731BD0074F4C3 /* Model */,
 				8470DBF526D6033100F6E243 /* View */,
 				84A6E40026D4E26D00454A05 /* LearnSwiftUIApp.swift */,
 				84A6E40426D4E26E00454A05 /* Assets.xcassets */,
@@ -84,6 +90,22 @@
 				84A6E40726D4E26E00454A05 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84F6FCCA26D731BD0074F4C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84F6FCC826D731B80074F4C3 /* Bicycle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84F6FCCD26D7354E0074F4C3 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				84F6FCCB26D732790074F4C3 /* GlobalObject.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +180,8 @@
 				84C835CE26D5EA2B005EC16F /* SettingView.swift in Sources */,
 				8470DBF726D6044C00F6E243 /* YoutubeHomeView.swift in Sources */,
 				84A6E40326D4E26D00454A05 /* LoginView.swift in Sources */,
+				84F6FCC926D731B80074F4C3 /* Bicycle.swift in Sources */,
+				84F6FCCC26D732790074F4C3 /* GlobalObject.swift in Sources */,
 				8470DBF926D63DEF00F6E243 /* BicycleHomeView.swift in Sources */,
 				84A6E40126D4E26D00454A05 /* LearnSwiftUIApp.swift in Sources */,
 			);

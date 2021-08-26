@@ -7,43 +7,24 @@
 
 import SwiftUI
 
-struct ProductModel : Identifiable {
-    let id: Int
-    let namaProduct: String
-    let fotoProduct: String
-    let hargaProduct: String
-    let lokasi: String
-    let ratingCount: Int
-    let jumlahRating: Int
-    
-    init(id: Int, namaProduct: String, fotoProduct: String, hargaProduct: String, lokasi: String, ratingCount: Int, jumlahRating: Int){
-        
-        self.id = id
-        self.namaProduct = namaProduct
-        self.fotoProduct = fotoProduct
-        self.hargaProduct = hargaProduct
-        self.lokasi = lokasi
-        self.ratingCount = ratingCount
-        self.jumlahRating = jumlahRating
-    }
-}
-
 struct BicycleHomeView: View {
     
+    //    @State var chartCount: Int = 0
+    @ObservedObject var chartCountGLobal = GLobalObject()
+    
     //new data
-    let data: [ProductModel] = [
-        ProductModel(id: 1, namaProduct: "Polygon Putih", fotoProduct: "img_bicycle", hargaProduct: "200.0000", lokasi: "Yogyakarta", ratingCount: 3, jumlahRating: 56),
-        ProductModel(id: 2, namaProduct: "Polygon Merah", fotoProduct: "img_bicycle", hargaProduct: "400.0000", lokasi: "Kebumen", ratingCount: 4, jumlahRating: 56),
-        ProductModel(id: 3, namaProduct: "Polygon Hitam", fotoProduct: "img_bicycle", hargaProduct: "300.0000", lokasi: "Jakarta", ratingCount: 5, jumlahRating: 56)
+    let data: [Bicycle] = [
+        Bicycle(id: 1, namaProduct: "Polygon Putih", fotoProduct: "img_bicycle", hargaProduct: "200.0000", lokasi: "Yogyakarta", ratingCount: 3, jumlahRating: 56),
+        Bicycle(id: 2, namaProduct: "Polygon Merah", fotoProduct: "img_bicycle", hargaProduct: "400.0000", lokasi: "Kebumen", ratingCount: 4, jumlahRating: 56),
+        Bicycle(id: 3, namaProduct: "Polygon Hitam", fotoProduct: "img_bicycle", hargaProduct: "300.0000", lokasi: "Jakarta", ratingCount: 5, jumlahRating: 56)
     ]
     
-    @State var chartCount: Int = 0
     var body: some View {
         NavigationView{
             ScrollView{
                 ForEach(data){row in
                     VStack(spacing:10){
-                        Product(data: row, chartCountIndex: $chartCount)
+                        Product(data: row, chartCount: chartCountGLobal)
                     }
                     .padding()
                 }
@@ -54,7 +35,7 @@ struct BicycleHomeView: View {
                     Button(action: {print("click button ")}, label: {
                         Image(systemName: "person.fill")
                     })
-                    ChartView(chartCount: $chartCount)
+                    ChartView(chartCountGLobal: self.chartCountGLobal)
                 }
             )
         }
@@ -62,23 +43,19 @@ struct BicycleHomeView: View {
         .navigationViewStyle(StackNavigationViewStyle())
     }
     
-    struct BicycleHomeView_Previews: PreviewProvider {
-        static var previews: some View {
-            BicycleHomeView()
-        }
-    }
-    
     struct ChartView : View {
-        
-        @Binding var chartCount: Int
+        //        @Binding var chartCount: Int
+        @ObservedObject var chartCountGLobal: GLobalObject
         
         var body: some View{
             ZStack{
                 Button(action: {print("click button ")}, label: {
-                    Image(systemName: "cart.fill")
+                    NavigationLink(destination : DetailChart(chartCountGLobal: chartCountGLobal)){
+                        Image(systemName: "cart.fill")
+                    }
                 })
                 
-                Text("\(chartCount)")
+                Text("\(self.chartCountGLobal.chartCount)")
                     .foregroundColor(Color.white)
                     .frame(width: 10, height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .font(.body)
@@ -91,10 +68,33 @@ struct BicycleHomeView: View {
         }
     }
     
+    struct DetailChart : View {
+        @ObservedObject var chartCountGLobal: GLobalObject
+        
+        var body: some View{
+            NavigationView{
+                Text("Detail Chart")
+                .navigationBarTitle("Bicycle")
+                .navigationBarItems(
+                    trailing: HStack(){
+                        Button(action: {print("click button ")}, label: {
+                            Image(systemName: "person.fill")
+                        })
+                        
+                        ChartView(chartCountGLobal : chartCountGLobal)
+                    }
+                )
+            }
+            .accentColor(Color.gray)
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+    }
+    
     struct Product : View {
         
-        let data: ProductModel
-        @Binding var chartCountIndex: Int
+        let data: Bicycle
+        //@Binding var chartCountIndex: Int
+        @ObservedObject var chartCount: GLobalObject
         
         var body: some View{
             VStack(alignment: .leading){
@@ -141,7 +141,7 @@ struct BicycleHomeView: View {
                 }
                 .padding(.leading)
                 
-                Button(action: {print(self.chartCountIndex += 1)}, label: {
+                Button(action: {print(self.chartCount.chartCount += 1)}, label: {
                     Spacer()
                     HStack{
                         Image(systemName: "cart")
@@ -157,5 +157,11 @@ struct BicycleHomeView: View {
             .background(Color("gray"))
             .cornerRadius(15)
         }
+    }
+}
+
+struct BicycleHomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        BicycleHomeView()
     }
 }
