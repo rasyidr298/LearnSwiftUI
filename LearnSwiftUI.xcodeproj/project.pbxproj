@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8410463226D78BB900DE6FF0 /* InstagramStory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410463126D78BB900DE6FF0 /* InstagramStory.swift */; };
+		8410463626D78F4600DE6FF0 /* InstagramContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8410463526D78F4600DE6FF0 /* InstagramContent.swift */; };
 		8470DBF726D6044C00F6E243 /* YoutubeHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470DBF626D6044C00F6E243 /* YoutubeHomeView.swift */; };
 		8470DBF926D63DEF00F6E243 /* BicycleHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8470DBF826D63DEF00F6E243 /* BicycleHomeView.swift */; };
 		84A6E40126D4E26D00454A05 /* LearnSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A6E40026D4E26D00454A05 /* LearnSwiftUIApp.swift */; };
@@ -16,9 +18,12 @@
 		84C835CE26D5EA2B005EC16F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C835CD26D5EA2B005EC16F /* SettingView.swift */; };
 		84F6FCC926D731B80074F4C3 /* Bicycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6FCC826D731B80074F4C3 /* Bicycle.swift */; };
 		84F6FCCC26D732790074F4C3 /* GlobalObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6FCCB26D732790074F4C3 /* GlobalObject.swift */; };
+		84F6FCCF26D73DE10074F4C3 /* InstagramView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F6FCCE26D73DE10074F4C3 /* InstagramView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8410463126D78BB900DE6FF0 /* InstagramStory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramStory.swift; sourceTree = "<group>"; };
+		8410463526D78F4600DE6FF0 /* InstagramContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramContent.swift; sourceTree = "<group>"; };
 		8470DBF626D6044C00F6E243 /* YoutubeHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeHomeView.swift; sourceTree = "<group>"; };
 		8470DBF826D63DEF00F6E243 /* BicycleHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BicycleHomeView.swift; sourceTree = "<group>"; };
 		84A6E3FD26D4E26D00454A05 /* LearnSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +35,7 @@
 		84C835CD26D5EA2B005EC16F /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		84F6FCC826D731B80074F4C3 /* Bicycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bicycle.swift; sourceTree = "<group>"; };
 		84F6FCCB26D732790074F4C3 /* GlobalObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalObject.swift; sourceTree = "<group>"; };
+		84F6FCCE26D73DE10074F4C3 /* InstagramView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +56,7 @@
 				84C835CD26D5EA2B005EC16F /* SettingView.swift */,
 				8470DBF626D6044C00F6E243 /* YoutubeHomeView.swift */,
 				8470DBF826D63DEF00F6E243 /* BicycleHomeView.swift */,
+				84F6FCCE26D73DE10074F4C3 /* InstagramView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				84F6FCC826D731B80074F4C3 /* Bicycle.swift */,
+				8410463126D78BB900DE6FF0 /* InstagramStory.swift */,
+				8410463526D78F4600DE6FF0 /* InstagramContent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,7 +189,10 @@
 				84C835CE26D5EA2B005EC16F /* SettingView.swift in Sources */,
 				8470DBF726D6044C00F6E243 /* YoutubeHomeView.swift in Sources */,
 				84A6E40326D4E26D00454A05 /* LoginView.swift in Sources */,
+				8410463626D78F4600DE6FF0 /* InstagramContent.swift in Sources */,
+				8410463226D78BB900DE6FF0 /* InstagramStory.swift in Sources */,
 				84F6FCC926D731B80074F4C3 /* Bicycle.swift in Sources */,
+				84F6FCCF26D73DE10074F4C3 /* InstagramView.swift in Sources */,
 				84F6FCCC26D732790074F4C3 /* GlobalObject.swift in Sources */,
 				8470DBF926D63DEF00F6E243 /* BicycleHomeView.swift in Sources */,
 				84A6E40126D4E26D00454A05 /* LearnSwiftUIApp.swift in Sources */,

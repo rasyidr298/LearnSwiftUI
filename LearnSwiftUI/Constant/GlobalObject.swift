@@ -9,4 +9,7 @@ import Foundation
 
 class GLobalObject: ObservableObject {
     @Published var chartCount: Int = 0
+    
+    //instagram
+    @Published var messageCount: Int = 0
 }
